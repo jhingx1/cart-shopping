@@ -24,7 +24,4 @@ public record ProductId(String value) {
         return new ProductId(new String(chars));
     }
 
-    public static void main(String[] args) {
-        System.out.println(randomProductId());
-    }
 }
