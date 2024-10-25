@@ -13,10 +13,37 @@ public record Money(Currency currency, BigDecimal amount) {
                     "fraction digits used with the currency $s".formatted(amount,currency));
         }
     }
+
+    //sumar un int mas un decimal
+    public static Money of(Currency currency,int mayor,int minor){
+        int scale = currency.getDefaultFractionDigits();
+        return new Money(currency,BigDecimal.valueOf(mayor).add(BigDecimal.valueOf(minor,scale)));
+    }
+
+    //multiplicando el monto por la cantidad
+    public Money multiply(int multiplicand){
+        return new Money(currency,amount.multiply(BigDecimal.valueOf(multiplicand)));
+    }
+    //sumar dos montos, validando que sean de la misma moneda
+    public Money add(Money augend){
+        if(!this.currency.equals(augend.currency)){
+            throw new IllegalArgumentException("Currency %s of augend does not match this money currency $s".formatted(augend.currency,this.currency));
+        }
+        return new Money(currency,amount.add(augend.amount()));
+    }
+
     public static void main(String[] args) {
-        Currency usd = Currency.getInstance("USD");
-        BigDecimal amount = new BigDecimal("100.00");
-        Money money1 = new Money(usd,amount);
+        Currency usd1 = Currency.getInstance("USD");
+        BigDecimal amount1 = new BigDecimal("10.00");
+        Money money1 = new Money(usd1, amount1);
+        System.out.println("Moneda1"+money1);
+        System.out.println("Moneda1*10"+money1.multiply(10));
+
+        Currency usd2 = Currency.getInstance("USD");
+        BigDecimal amount2 = new BigDecimal("20.00");
+        Money money2 = new Money(usd2, amount2);
+        System.out.println("Moneda2"+money2);
+        System.out.println("Moneda2+Moneda1"+money1.add(money2));
     }
 }
 
