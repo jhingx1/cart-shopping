@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 @Accessors(fluent = true)
@@ -23,6 +24,11 @@ public class Cart {
         lineItems
                 .computeIfAbsent(product.id(), ignored -> new CartLineItem(product))
                 .increaseQuantityBy(quantity, product.itemInStock());
+    }
+
+
+    public List<CartLineItem> lineItems(){
+        return List.copyOf(lineItems.values());
     }
 
     //ignora la validacion de stock

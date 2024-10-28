@@ -38,6 +38,7 @@ public record Money(Currency currency, BigDecimal amount) {
         Money money1 = new Money(usd1, amount1);
         System.out.println("Moneda1"+money1);
         System.out.println("Moneda1*10"+money1.multiply(10));
+        System.out.println("Moneda1+OF"+of(usd1,10,150));
 
         Currency usd2 = Currency.getInstance("USD");
         BigDecimal amount2 = new BigDecimal("20.00");
