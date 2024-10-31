@@ -26,7 +26,6 @@ public class Cart {
                 .increaseQuantityBy(quantity, product.itemInStock());
     }
 
-
     public List<CartLineItem> lineItems(){
         return List.copyOf(lineItems.values());
     }
