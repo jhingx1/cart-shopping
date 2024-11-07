@@ -4,6 +4,7 @@ import com.mitocode.shop.model.customer.CustomerId;
 import com.mitocode.shop.model.money.Money;
 import com.mitocode.shop.model.product.Product;
 import com.mitocode.shop.model.product.ProductId;
+import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
@@ -11,7 +12,7 @@ import lombok.experimental.Accessors;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
+@Data
 @Accessors(fluent = true)
 @RequiredArgsConstructor
 public class Cart {
@@ -47,3 +48,4 @@ public class Cart {
     }
 
 }
+

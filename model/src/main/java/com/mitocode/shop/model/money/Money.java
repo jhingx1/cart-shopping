@@ -32,19 +32,19 @@ public record Money(Currency currency, BigDecimal amount) {
         return new Money(currency,amount.add(augend.amount()));
     }
 
-    public static void main(String[] args) {
-        Currency usd1 = Currency.getInstance("USD");
-        BigDecimal amount1 = new BigDecimal("10.00");
-        Money money1 = new Money(usd1, amount1);
-        System.out.println("Moneda1"+money1);
-        System.out.println("Moneda1*10"+money1.multiply(10));
-        System.out.println("Moneda1+OF"+of(usd1,10,150));
-
-        Currency usd2 = Currency.getInstance("USD");
-        BigDecimal amount2 = new BigDecimal("20.00");
-        Money money2 = new Money(usd2, amount2);
-        System.out.println("Moneda2"+money2);
-        System.out.println("Moneda2+Moneda1"+money1.add(money2));
-    }
+//    public static void main(String[] args) {
+//        Currency usd1 = Currency.getInstance("USD");
+//        BigDecimal amount1 = new BigDecimal("10.00");
+//        Money money1 = new Money(usd1, amount1);
+//        System.out.println("Moneda1"+money1);
+//        System.out.println("Moneda1*10"+money1.multiply(10));
+//        System.out.println("Moneda1+OF"+of(usd1,10,150));
+//
+//        Currency usd2 = Currency.getInstance("USD");
+//        BigDecimal amount2 = new BigDecimal("20.00");
+//        Money money2 = new Money(usd2, amount2);
+//        System.out.println("Moneda2"+money2);
+//        System.out.println("Moneda2+Moneda1"+money1.add(money2));
+//    }
 }
 
