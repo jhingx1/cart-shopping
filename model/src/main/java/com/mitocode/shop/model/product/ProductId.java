@@ -25,5 +25,6 @@ public record ProductId(String value) {
     }
     public static void main(String[] args) {
         System.out.println(randomProductId());
+        System.out.println(new ProductId("111"));
     }
 }
