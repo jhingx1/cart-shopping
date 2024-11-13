@@ -33,10 +33,10 @@ public class AddToCartController {
             Cart cart = addToCartUseCase.addToCart(customerId, productId, quantity);
             return CartWebModel.fromDomainModel(cart);
         }catch (ProductNotFoundException e){
-            throw clientErrorException(Response.Status.BAD_REQUEST, "The requested product does no exist");
+            throw clientErrorException(Response.Status.BAD_REQUEST, "The requested product does not exist");
         }catch (NotEnoughItemsInStockException e){
             throw clientErrorException(
-                    Response.Status.BAD_REQUEST, "only %d items in stock".formatted(e.itemInStock()));
+                    Response.Status.BAD_REQUEST, "Only %d items in stock".formatted(e.itemInStock()));
         }
     }
 

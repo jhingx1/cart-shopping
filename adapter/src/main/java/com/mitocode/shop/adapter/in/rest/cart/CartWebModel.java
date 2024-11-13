@@ -2,7 +2,6 @@ package com.mitocode.shop.adapter.in.rest.cart;
 
 import com.mitocode.shop.model.cart.Cart;
 import com.mitocode.shop.model.money.Money;
-
 import java.util.List;
 
 public record CartWebModel(List<CartLineItemWebModel> lineItems, int numberOfItems, Money subtotal) {

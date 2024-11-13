@@ -1,7 +1,5 @@
 package com.mitocode.shop.model.customer;
 
-import com.mitocode.shop.model.product.ProductId;
-
 public record CustomerId(int value) {
     public CustomerId{
         if(value<1){
