@@ -5,13 +5,14 @@ import com.mitocode.shop.model.product.Product;
 import com.mitocode.shop.model.product.ProductId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.math.BigDecimal;
 import java.util.Currency;
 
-@Data
+@Getter
 @Accessors(fluent = true)
 @RequiredArgsConstructor
 @AllArgsConstructor
