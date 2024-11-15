@@ -5,7 +5,7 @@ import jakarta.persistence.Persistence;
 
 import java.util.Map;
 
-
+//configuracion de base de datos
 public class EntityManagerFactoryFactory {
 
     private EntityManagerFactoryFactory(){}
